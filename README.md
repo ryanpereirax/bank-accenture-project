@@ -38,16 +38,6 @@ Antes de executar o projeto:
 - Maven configurado no PATH  
 - Node.js + npm instalados  
 - IDE recomendada (IntelliJ, Eclipse STS)  
-
----
-
-## ▶️ Execução do Backend
-
-No terminal, dentro da pasta backend/:
-
-bash
- * mvn clean install
- * mvn spring-boot:run
    
 ---
 
