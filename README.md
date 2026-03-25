@@ -67,8 +67,11 @@ bash
 
 ## ▶️ Configuração padrão H2:
 
+
 *JDBC URL: jdbc:h2:mem:banco, 
+                                     
  *User: sa, 
+                               
  *Password: (vazio)
 
 ---
