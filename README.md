@@ -76,9 +76,10 @@ mvn spring-boot:run
 ---
 
 ## ▶️ Configuração padrão H2:
-JDBC URL: jdbc:h2:mem:banco
-User: sa
-Password: (vazio)
+
+*JDBC URL: jdbc:h2:mem:banco
+*User: sa
+*Password: (vazio)
 
 ---
 
