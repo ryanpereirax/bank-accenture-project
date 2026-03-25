@@ -77,8 +77,9 @@ mvn spring-boot:run
 
 No terminal, dentro da pasta frontend/:
 
-*npm install
-*npm start
+*npm install*
+*npm start*
+
 Frontend disponível em: http://localhost:3000
 
 ---
