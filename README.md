@@ -57,8 +57,8 @@ Antes de executar o projeto:
 No terminal, dentro da pasta backend/:
 
 bash
-mvn clean install
-mvn spring-boot:run
+*mvn clean install*, 
+*mvn spring-boot:run*
 
 * API disponível em: http://localhost:8080
 * Console H2 em: http://localhost:8080/h2-console
@@ -67,9 +67,9 @@ mvn spring-boot:run
 
 ## ▶️ Configuração padrão H2:
 
-*JDBC URL: jdbc:h2:mem:banco
-*User: sa
-*Password: (vazio)
+*JDBC URL: jdbc:h2:mem:banco, 
+ *User: sa, 
+ *Password: (vazio)
 
 ---
 
@@ -77,7 +77,8 @@ mvn spring-boot:run
 
 No terminal, dentro da pasta frontend/:
 
-*npm install*
+*npm install*, 
+
 *npm start*
 
 Frontend disponível em: http://localhost:3000
