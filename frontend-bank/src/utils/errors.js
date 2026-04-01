@@ -1,29 +1,32 @@
 export function normalizeApiError(err) {
-  if (!err) return "Erro desconhecido.";
-
-  // Axios error
   const status = err?.response?.status;
   const data = err?.response?.data;
 
-  // 1) Se backend retorna string (ex: GlobalExceptionHandler retorna String)
   if (typeof data === "string") {
     return status ? `${status} - ${data}` : data;
   }
 
-  // 2) Se backend retorna JSON com "message"
   if (data && typeof data === "object") {
     if (data.message) return status ? `${status} - ${data.message}` : String(data.message);
     if (data.error) return status ? `${status} - ${data.error}` : String(data.error);
+
+    if (Array.isArray(data.errors) && data.errors.length > 0) {
+      const msg = data.errors
+        .map((e) => e?.message || e?.defaultMessage || (typeof e === "string" ? e : null))
+        .filter(Boolean)
+        .join(" | ");
+      if (msg) return status ? `${status} - ${msg}` : msg;
+    }
+
+    if (data.detail) return status ? `${status} - ${data.detail}` : String(data.detail);
+    if (data.details) return status ? `${status} - ${data.details}` : String(data.details);
   }
 
-  // 3) fallback: msg do axios / js
-  if (err.message) {
+  if (err?.message) {
     return status ? `${status} - ${err.message}` : err.message;
   }
 
-  try {
-    return JSON.stringify(err);
-  } catch {
-    return "Erro inesperado.";
-  }
+  const name = err?.name ? String(err.name) : "Erro";
+  const code = err?.code ? ` (${err.code})` : "";
+  return status ? `${status} - ${name}${code}` : `${name}${code}`;
 }

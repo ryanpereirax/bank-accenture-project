@@ -4,6 +4,7 @@ import { toMoney } from "../utils/format";
 import contasApi from "../services/contas";
 import clientesApi from "../services/clientes";
 import agenciasApi from "../services/agencias";
+import ContaDetalheCard from "../components/ContaDetalheCard";
 
 import { normalizeApiError } from "../utils/errors";
 
@@ -211,20 +212,18 @@ export default function Contas() {
         </div>
 
                 {contaEncontrada ? (
-          <pre style={{ marginTop: 12, overflow: "auto" }}>
-            {JSON.stringify(contaEncontrada, null, 2)}
-          </pre>
-        ) : (
-          <div
-            style={{
-              marginTop: 12,
-              color: "rgba(229,231,235,.70)",
-              fontSize: 13,
-            }}
-          >
-            Nenhuma conta carregada ainda.
-          </div>
-        )}
+                  <ContaDetalheCard conta={contaEncontrada} />
+                ) : (
+                  <div
+                    style={{
+                      marginTop: 12,
+                      color: "rgba(229,231,235,.70)",
+                      fontSize: 13,
+                    }}
+                  >
+                    Nenhuma conta carregada ainda.
+                  </div>
+                )}
       </div>
     </>
   );

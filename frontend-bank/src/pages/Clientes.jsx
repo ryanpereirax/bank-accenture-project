@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import clientesApi from "../services/clientes";
 import { normalizeApiError } from "../utils/errors";
 import { isCpfValid } from "../utils/validators";
+import ClienteDetalheCard from "../components/ClienteDetalheCard";
 
 export default function Clientes() {
   const [loading, setLoading] = useState(false);
@@ -178,10 +179,9 @@ export default function Clientes() {
         </div>
 
         {clienteDetalhe && (
-          <pre style={{ marginTop: 12, background: "#f4efff", padding: 12, borderRadius: 16, overflow: "auto" }}>
-            {JSON.stringify(clienteDetalhe, null, 2)}
-          </pre>
+          <ClienteDetalheCard cliente={clienteDetalhe} />
         )}
+
       </div>
 
       <div style={{ height: 14 }} />
