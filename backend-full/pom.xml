@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> 
 	</parent>
 	<groupId>com.accenture</groupId>
 	<artifactId>academico</artifactId>
@@ -59,26 +59,22 @@
 			<optional>true</optional>
 		</dependency>
 
-	 <!-- Web -->
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-web</artifactId>
 	    </dependency>
 	
-	    <!-- JPA -->
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-data-jpa</artifactId>
 	    </dependency>
-	
-	    <!-- H2 -->
+
 	    <dependency>
 	        <groupId>com.h2database</groupId>
 	        <artifactId>h2</artifactId>
 	        <version>2.4.240</version>
 	    </dependency>
 	
-	    <!-- TESTES (ÚNICO NECESSÁRIO) -->
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-test</artifactId>
@@ -113,12 +109,10 @@
 			
 			    <configuration>
 			        <excludes>
-			            <!-- infraestrutura -->
 			            <exclude>**/*Application*</exclude>
 			            <exclude>**/controller/**</exclude>
 			            <exclude>**/config/**</exclude>
 			
-			            <!-- JPA / domínio passivo -->
 			            <exclude>**/model/entity/**</exclude>
 			            <exclude>**/exception/**</exclude>
 			        </excludes>
